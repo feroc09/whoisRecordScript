@@ -36,7 +36,8 @@ def main():
                     continue
                 else:
                     print(i + " was NOT found in yesterday's data.")
-                    #sendEmail()
+                    #This email should include the updated_info.json format but file was not received.
+                    sendEmail()
                     print("Email sent")
 
 
@@ -74,7 +75,7 @@ def sendEmail():
 #If uninterrupted runtime is to be avoided, alternatives such as cron jobs on bash can be considered. 
 #The business logic presented would work since it uses persistent data and runtime interrumptions do not cause data loss.
  
-schedule.every(3).seconds.do(main)
+schedule.every(86400).seconds.do(main)
 
 while 1:
     schedule.run_pending()
