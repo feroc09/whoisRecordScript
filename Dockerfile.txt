@@ -1,0 +1,15 @@
+#Using python's latest
+FROM python:latest
+
+
+#we select the directory we want to script to be kept on
+WORKDIR /usr/app/src
+
+#we copy our script to the same directory by using "./"
+COPY script.py ./
+COPY yesterdayData.txt ./
+
+
+#we use a CMD instruction to run our script
+
+CMD [ "python", "./script.py"]
